@@ -1,7 +1,7 @@
 ![Gumnuts](koala_capturess.png)
 
 -- by Left Foot Brake --
-💛 Support Gumnuts on PayPal - Eucalyptus leaves are expensive and koalas don't even water, only energy drinks.
+💛 Support Gumnuts on PayPal - Eucalyptus leaves are expensive and koalas don't even drink water, only energy drinks.
 
 🐨 Gumnuts — AI Memory for Everyone
 
