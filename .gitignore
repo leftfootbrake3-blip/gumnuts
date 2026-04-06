@@ -16,3 +16,4 @@ extract_*.txt
 read_*.py
 *_current.txt
 *_content.txt
+*_out.txt
