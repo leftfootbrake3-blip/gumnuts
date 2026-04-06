@@ -1,0 +1,55 @@
+{
+  "manifest_version": 3,
+  "name": "Gumnuts",
+  "version": "9.0",
+  "description": "AI Memory for Everyone. Persistent context across sessions, tabs, and AI platforms.",
+  "permissions": [
+    "storage",
+    "tabs",
+    "sidePanel",
+    "scripting"
+  ],
+  "action": {
+    "default_icon": {
+      "16": "icons/gumnuts-16.png",
+      "32": "icons/gumnuts-32.png",
+      "48": "icons/gumnuts-48.png",
+      "128": "icons/gumnuts-128.png"
+    }
+  },
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content/inject.js"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "sidepanel.html",
+        "sidepanel.js",
+        "sidepanel.css",
+        "icons/*",
+        "story.html",
+        "story.js",
+        "story.css"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ],
+  "host_permissions": [
+    "https://api.github.com/*"
+  ]
+}

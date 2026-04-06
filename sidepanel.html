@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Gumnuts</title>
+<link rel="stylesheet" href="sidepanel.css">
+</head>
+<body>
+<div id="hdr">
+  <img src="icons/gumnuts-sticker.png" alt="Gumnuts">
+  <div><div id="hdr-title">GUMNUTS</div><div id="hdr-sub">AI memory for everyone</div></div>
+  <button id="day-btn">day 1</button>
+</div>
+
+<div id="story-bar">
+  <div><div id="story-day">day 1 of 28</div><div id="story-name">gumnuts wakes up</div></div>
+  <div style="color:#FF8FAB;font-size:18px;margin-left:auto;">&#9654;</div>
+</div>
+
+<div id="main">
+  <div class="tiles-top">
+    <div class="tile-primary" data-act="showLoad">
+      <div class="tile-arrow">&#8594; start here</div>
+      <img src="icons/icon-load.png" class="tile-img">
+      <div class="tile-lbl">start new chat</div>
+      <div class="tile-sub">loads your context</div>
+    </div>
+    <div class="tile-primary" data-act="showSave">
+      <div class="tile-arrow">&#8594; end here</div>
+      <img src="icons/icon-save.png" class="tile-img">
+      <div class="tile-lbl">save this chat</div>
+      <div class="tile-sub">updates gumnuts</div>
+    </div>
+  </div>
+  <div class="divider">
+    <img src="icons/gumleaf.png"> more tools <img src="icons/gumleaf.png" style="transform:scaleX(-1)">
+  </div>
+  <div class="tiles">
+    <div class="tile" data-act="showSummarise">
+      <img src="icons/icon-summarise.png" class="tile-img">
+      <div class="tile-lbl">summarise chat</div><div class="tile-sub">get AI to recap</div>
+    </div>
+    <div class="tile" data-act="showMiner">
+      <img src="icons/icon-copy.png" class="tile-img">
+      <div class="tile-lbl">extract info</div><div class="tile-sub">urls, paths, tasks</div>
+    </div>
+    <div class="tile" data-act="showBroadcast">
+      <img src="icons/icon-broadcast.png" class="tile-img">
+      <div class="tile-lbl">send to all AIs</div><div class="tile-sub">broadcast prompt</div>
+    </div>
+    <div class="tile" data-act="showSettings">
+      <img src="icons/icon-watching.png" class="tile-img">
+      <div class="tile-lbl">settings</div><div class="tile-sub">preferences</div>
+    </div>
+  </div>
+  <a href="https://paypal.me/leftfootbrake" target="_blank" class="donate-btn">
+    <img src="icons/icon-donate.png" style="width:20px;height:20px;vertical-align:middle;margin-right:6px;">support gumnuts - donate
+  </a>
+  <div class="footer">v9.0</div>
+</div>
+
+<!-- LOAD -->
+<div class="panel" id="p-load">
+  <button class="back" data-act="back">&#8592; back</button>
+  <img src="icons/icon-load.png" style="width:60px;display:block;margin:8px auto;">
+  <div class="panel-title">start a new chat</div>
+  <div class="panel-sub">fetches your context from GitHub and injects it directly into your AI chat. Just hit send.</div>
+  <button class="btn-big" data-act="doLoad">&#128640; load context into chat</button>
+  <span class="status" id="loadStatus"></span>
+</div>
+
+<!-- SAVE -->
+<div class="panel" id="p-save">
+  <button class="back" data-act="back">&#8592; back</button>
+  <img src="icons/icon-save.png" style="width:60px;display:block;margin:8px auto;">
+  <div class="panel-title">save this chat</div>
+  <div class="panel-sub">grab the AI's last response or paste your own notes, then save to GitHub.</div>
+  <button class="btn-capture" data-act="doCapture">&#128270; grab latest response from chat</button>
+  <span class="status" id="captureStatus"></span>
+  <div class="lbl">session notes</div>
+  <textarea id="saveNotes" rows="7" placeholder="click 'grab latest response' above, or paste notes here manually..."></textarea>
+  <div class="lbl">source AI</div>
+  <div class="arow" id="saveAI">
+    <button class="abtn on" data-group="saveAI">Claude</button>
+    <button class="abtn" data-group="saveAI">ChatGPT</button>
+    <button class="abtn" data-group="saveAI">Gemini</button>
+    <button class="abtn" data-group="saveAI">Grok</button>
+    <button class="abtn" data-group="saveAI">Generic</button>
+  </div>
+  <button class="btn-big" data-act="doSave">&#128640; save to GitHub</button>
+  <span class="status" id="saveStatus"></span>
+  <div style="margin-top:10px;border-top:1px solid rgba(255,255,255,0.1);padding-top:10px;">
+    <div class="panel-sub" style="margin-bottom:6px;">or skip the manual steps entirely:</div>
+    <div class="lbl">auto-save AI</div>
+    <div class="arow" id="autoAI">
+      <button class="abtn on" data-group="autoAI">Claude</button>
+      <button class="abtn" data-group="autoAI">ChatGPT</button>
+      <button class="abtn" data-group="autoAI">Gemini</button>
+      <button class="abtn" data-group="autoAI">Grok</button>
+      <button class="abtn" data-group="autoAI">Generic</button>
+    </div>
+    <button class="btn-auto" data-act="doAutoSave">&#9889; auto-capture &amp; save</button>
+    <span class="status" id="autoStatus"></span>
+  </div>
+</div>
+
+<!-- SUMMARISE -->
+<div class="panel" id="p-summarise">
+  <button class="back" data-act="back">&#8592; back</button>
+  <div class="panel-title">summarise chat</div>
+  <div class="lbl">optimise for</div>
+  <div class="arow" id="sumAI">
+    <button class="abtn on" data-group="sumAI">Claude</button>
+    <button class="abtn" data-group="sumAI">ChatGPT</button>
+    <button class="abtn" data-group="sumAI">Gemini</button>
+    <button class="abtn" data-group="sumAI">Grok</button>
+    <button class="abtn" data-group="sumAI">Generic</button>
+  </div>
+  <div class="lbl">custom focus (optional)</div>
+  <input type="text" id="sumFocus" placeholder="e.g. focus on my main project">
+  <button class="btn-big" data-act="doSummarise">&#128640; generate summary prompt</button>
+  <div class="out" id="sumOut"></div>
+  <button class="btn-sm" id="sumCopyBtn" style="display:none" data-act="copySumOut">copy to clipboard</button>
+</div>
+
+<!-- MINER -->
+<div class="panel" id="p-miner">
+  <button class="back" data-act="back">&#8592; back</button>
+  <div class="panel-title">extract info</div>
+  <textarea id="minerIn" rows="6" placeholder="paste raw content here..."></textarea>
+  <button class="btn-big" data-act="doMine">&#128640; extract</button>
+  <div class="out" id="minerOut"></div>
+  <button class="btn-sm" id="minerSendBtn" style="display:none" data-act="sendToSave">send to save chat &#8594;</button>
+</div>
+
+<!-- BROADCAST -->
+<div class="panel" id="p-broadcast">
+  <button class="back" data-act="back">&#8592; back</button>
+  <div class="panel-title">send to all AIs</div>
+  <textarea id="broadcastText" rows="5" placeholder="enter your prompt..."></textarea>
+  <button class="btn-big" data-act="doBroadcast">&#128640; send to all AIs</button>
+  <span class="status" id="broadcastStatus"></span>
+</div>
+
+<!-- SETTINGS -->
+<div class="panel" id="p-settings">
+  <button class="back" data-act="back">&#8592; back</button>
+  <div class="panel-title">settings</div>
+  <div class="lbl">your name</div>
+  <input type="text" id="sName" placeholder="e.g. your name">
+  <div class="lbl">what are you working on?</div>
+  <input type="text" id="sProjects" placeholder="e.g. my app, my business...">
+  <button class="btn-big" data-act="doSaveSettings">save</button>
+  <span class="status" id="settingsStatus"></span>
+  <div style="margin-top:14px;">
+    <details>
+      <summary style="cursor:pointer;color:#FF8FAB;">&#9881; github cloud backup</summary>
+      <div style="margin-top:8px;">
+        <div class="lbl">github token (classic, repo scope)</div>
+        <input type="text" id="sToken" placeholder="ghp_xxxxxxxxxxxx">
+        <div class="lbl">github repo</div>
+        <input type="text" id="sRepo" placeholder="username/repo-name">
+        <button class="btn-sm" data-act="doSaveGitHub">save github settings</button>
+        <span class="status" id="githubStatus"></span>
+      </div>
+    </details>
+  </div>
+  <div style="text-align:center;margin-top:16px;font-family:'Comic Sans MS',cursive;font-size:11px;color:#AA88BB;">
+    gumnuts v9.0<br><a href="https://paypal.me/leftfootbrake" target="_blank" style="color:#FF4D8D;">support gumnuts</a>
+  </div>
+</div>
+
+<script src="sidepanel.js"></script>
+</body>
+</html>

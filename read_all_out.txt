@@ -1,0 +1,56 @@
+README: 6038 chars
+
+=== gumnuts-extension-v5.7.zip (26 files) ===
+         0  gumnuts-ext/
+      2483  gumnuts-ext/background.js
+         0  gumnuts-ext/content/
+         0  gumnuts-ext/icons/
+     33856  gumnuts-ext/icons/gumleaf.png
+     22836  gumnuts-ext/icons/gumnuts-128.png
+      1085  gumnuts-ext/icons/gumnuts-16.png
+      2653  gumnuts-ext/icons/gumnuts-32.png
+      4846  gumnuts-ext/icons/gumnuts-48.png
+      8972  gumnuts-ext/icons/gumnuts-head.png
+    749221  gumnuts-ext/icons/gumnuts-logo.png
+     32957  gumnuts-ext/icons/gumnuts-sticker.png
+      5887  gumnuts-ext/icons/icon-broadcast.png
+      5903  gumnuts-ext/icons/icon-copy.png
+      6832  gumnuts-ext/icons/icon-donate.png
+      7080  gumnuts-ext/icons/icon-load.png
+      5712  gumnuts-ext/icons/icon-paste.png
+      6064  gumnuts-ext/icons/icon-save.png
+      6627  gumnuts-ext/icons/icon-summarise.png
+      6289  gumnuts-ext/icons/icon-watching.png
+       830  gumnuts-ext/manifest.json
+      1068  gumnuts-ext/newtab.html
+      6591  gumnuts-ext/sidepanel.css
+      7657  gumnuts-ext/sidepanel.html
+     12180  gumnuts-ext/sidepanel.js
+      3771  gumnuts-ext/welcome.html
+
+=== gumnuts-v8.4.zip (25 files) ===
+         0  gumnuts-clean/
+      4718  gumnuts-clean/background.js
+         0  gumnuts-clean/content/
+      1010  gumnuts-clean/content/inject.js
+         0  gumnuts-clean/icons/
+     33856  gumnuts-clean/icons/gumleaf.png
+     22836  gumnuts-clean/icons/gumnuts-128.png
+      1085  gumnuts-clean/icons/gumnuts-16.png
+      2653  gumnuts-clean/icons/gumnuts-32.png
+      4846  gumnuts-clean/icons/gumnuts-48.png
+     32957  gumnuts-clean/icons/gumnuts-sticker.png
+      5887  gumnuts-clean/icons/icon-broadcast.png
+      5903  gumnuts-clean/icons/icon-copy.png
+      6832  gumnuts-clean/icons/icon-donate.png
+      7080  gumnuts-clean/icons/icon-load.png
+      6064  gumnuts-clean/icons/icon-save.png
+      6627  gumnuts-clean/icons/icon-summarise.png
+      6289  gumnuts-clean/icons/icon-watching.png
+      1031  gumnuts-clean/manifest.json
+      5300  gumnuts-clean/sidepanel.css
+      7010  gumnuts-clean/sidepanel.html
+     11334  gumnuts-clean/sidepanel.js
+      6716  gumnuts-clean/story.css
+      1262  gumnuts-clean/story.html
+     73856  gumnuts-clean/story.js

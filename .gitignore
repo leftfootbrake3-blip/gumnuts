@@ -1,0 +1,18 @@
+# Build artifacts
+*.zip
+*.exe
+
+# Extracted/temp directories
+gumnuts-clean/
+gumnuts-ext/
+extracted/
+
+# Temp scripts and logs
+git_*.py
+git_*.txt
+dump_*.txt
+extract_*.py
+extract_*.txt
+read_*.py
+*_current.txt
+*_content.txt
